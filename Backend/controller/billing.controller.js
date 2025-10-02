@@ -9,8 +9,10 @@
 //   ]
 // }
 
-import { Bill } from "../models/bill.models";
-import { User } from "../models/user.models";
+
+
+import { Bill } from "../models/bill.models.js";
+import { User } from "../models/user.models.js";
 
 export const createBill =  async (req,res)=>
 {

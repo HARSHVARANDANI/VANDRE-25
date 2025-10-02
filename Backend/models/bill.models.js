@@ -1,5 +1,5 @@
 import mongoose from "mongoose"
-import { Counter } from "./counter.models";
+import { Counter } from "./counter.models.js";
 
 
 const billSchema= new mongoose.Schema({

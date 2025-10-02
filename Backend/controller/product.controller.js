@@ -1,4 +1,4 @@
-
+import { User } from "../models/user.models.js";
 
 export const addproducts = async (req, res) =>
 {

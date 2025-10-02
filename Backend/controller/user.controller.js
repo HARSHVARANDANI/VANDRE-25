@@ -1,4 +1,7 @@
 
+import { User } from '../models/user.models.js';
+import bcrypt from "bcrypt"
+
 
 const generateAccessAndRefreshTokens = async (user) => {
   try {
