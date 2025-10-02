@@ -25,6 +25,7 @@ const userSchema = new mongoose.Schema({
             default: []
         }]
     },
+    //only storing id and not full object
     bills: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Bill"
