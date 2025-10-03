@@ -68,7 +68,7 @@ export const login = async (req, res) => {
       secure: true,
     }
 
-    res.status(200).cookie("refreshToken", refreshToken, options).cookie("accessToken", accessToken, options).json({message: "User Authenticated", user: loggedInUser})
+    res.status(200).cookie("refreshToken", refreshToken, options).cookie("accessToken", accessToken, options).json({message: "User Authenticated", user: loggedInUser,accessToken})
   }
   else{
     return res.status(401).json({message: "Invalid credentials"})

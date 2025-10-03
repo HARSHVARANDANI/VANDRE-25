@@ -34,7 +34,7 @@ export const LandingPage = ({ onLogin }: LandingPageProps) => {
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <div className="space-y-4">
-              <h1 className="text-5xl md:text-7xl font-bold gradient-hero bg-clip-text text-transparent">
+              <h1 className="text-5xl md:text-7xl font-bold gradient-hero bg-clip-text p-4 rounded-md">
                 Vandre'25
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">

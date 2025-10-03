@@ -28,8 +28,9 @@ export const LoginPage = () => {
     }
 
     try {
-        const res = await axios.post("http://localhost:3000/users/login",formData);
+        const res = await axios.post("http://localhost:3000/users/login",formData,{withCredentials:true});//withCredentials this is very imp as we need to store cookies from cross origin
         console.log(res.data);
+
         // Simulate login success
         toast({
         title: "Welcome back!",

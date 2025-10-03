@@ -16,7 +16,7 @@ userRouter.route("/login").post(login);
 // user/logout
 userRouter.route("/logout").post(verifyjwt,logout)
 userRouter.route("/addProducts").post(verifyjwt,addproducts)
-userRouter.route("/getAllProducts").post(verifyjwt,listAllProducts)
+userRouter.route("/getAllProducts").get(verifyjwt,listAllProducts)
 
 
 userRouter.route("/createBill").post(verifyjwt,createBill)

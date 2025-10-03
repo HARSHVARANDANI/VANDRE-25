@@ -17,26 +17,27 @@ interface OutletContext {
 
 export const ProductsPage = () => {
   const { billDraft, setBillDraft } = useOutletContext<OutletContext>();
-  const [products, setProducts] = useState<Product[]>();
+  const [products, setProducts] = useState<Product[]>([]);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isNewProductModalOpen, setIsNewProductModalOpen] = useState(false);
 
 
-  useEffect(()=>
-  {
-    async function getAllProducts() {
-      
-      try {
-        const res= await axios.get("http://localhost:3000/users/getAllProducts",{withCredentials:true})
-        console.log(res);
-        setProducts(res.data);
-      } catch (error) {
-        console.log("Cannot Fetch All Details",error);
-      }
+useEffect(() => {
+  async function getAllProducts() {
+    try {
+      const res = await axios.get("http://localhost:3000/users/getAllProducts", {
+        withCredentials: true,   // must be inside config, not body
+      });
+      console.log("Fetched products:", res.data);
+      setProducts(res.data);
+    } catch (error) {
+      console.error("Cannot Fetch All Details", error);
     }
-    getAllProducts();
-  },[products])
+  }
+  getAllProducts();
+}, []);
+
 
   const handleAddToBill = (product: Product) => {
     setSelectedProduct(product);
@@ -75,6 +76,7 @@ export const ProductsPage = () => {
 
   const handleAddNewProduct = async (product: Product) => {
     try {
+      console.log(product); 
       const res = await axios.post("http://localhost:3000/users/addProducts",product,{withCredentials:true}); 
       setProducts([...products, product]);
       toast({
