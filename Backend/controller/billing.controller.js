@@ -16,6 +16,7 @@ import { User } from "../models/user.models.js";
 
 export const createBill =  async (req,res)=>
 {
+    
     try {
         const {customerName,products}=req.body;
 
@@ -59,6 +60,7 @@ export const createBill =  async (req,res)=>
 
 export const getAllBills = async(req,res)=>
 {
+    console.log("getting All bills");
     try {
         // const user = await User.aggregate([
         // {
@@ -86,7 +88,7 @@ export const getAllBills = async(req,res)=>
         // return res.status(201).json(user);
 
         //better than this is 
-        const user = await User.findById(req.user._id).populate("bills").select("name bills")
+        const user = await User.findById(req.user._id).populate("bills").select("bills")
         return res.status(201).json(user);
     } catch (error) {
         res.status(500).json({ error: err.message });

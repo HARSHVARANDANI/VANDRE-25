@@ -19,7 +19,7 @@ userRouter.route("/logout").post(verifyjwt,logout)
 userRouter.route("/addProducts").post(verifyjwt,addproducts)
 
 userRouter.route("/createBill").post(verifyjwt,createBill)
-userRouter.route("/createBill").get(verifyjwt,getAllBills)
+userRouter.route("/getAllBills").get(verifyjwt,getAllBills)
 
 
 
