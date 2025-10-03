@@ -18,13 +18,24 @@ const userSchema = new mongoose.Schema({
         type:String,
         required: true,
     },
-    products: {
-        type: [{
-            type: String,
-            lowercase: true,
-            default: []
-        }]
-    },
+    products: [
+        {
+            productName:{
+                type:String,
+                required:true,
+                trim:true,
+            },
+            category:{
+                type:String,
+                required:true,
+                trim:true,
+            },
+            defaultValue:{
+                type:Number,
+                required:true,
+            }
+        }
+    ],
     //only storing id and not full object
     bills: [{
         type: mongoose.Schema.Types.ObjectId,

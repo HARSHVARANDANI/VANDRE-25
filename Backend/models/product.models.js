@@ -1,11 +1,12 @@
 import mongoose, { Mongoose } from "mongoose"
 
 const productSchema = new mongoose.Schema({
-    name: {
+    productName: {
         type: String,
         required: true,
         lowercase: true,
     },
+
 }, {timestamps: true})
 
 
