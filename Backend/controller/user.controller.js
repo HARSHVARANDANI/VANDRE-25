@@ -18,6 +18,7 @@ const generateAccessAndRefreshTokens = async (user) => {
 }
 
 export const signup = async (req, res) => {
+  console.log("going to signup");
   try
   {const { name, email, password } = req.body;
   const existingUser = await User.findOne({email});
@@ -47,6 +48,7 @@ export const signup = async (req, res) => {
 
 
 export const login = async (req, res) => {
+  console.log("going to login");
   try
   {const { email, password } = req.body;
   const currentUser = await User.findOne({email});

@@ -1,12 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Receipt, TrendingUp, Shield } from "lucide-react";
-
+import { useNavigate } from "react-router-dom";
 interface LandingPageProps {
   onLogin: () => void;
 }
 
+
 export const LandingPage = ({ onLogin }: LandingPageProps) => {
+  const navigate=useNavigate();
+  const handleLogin = ()=>
+  {
+      navigate("/login");
+  }
+  const handlesignup = ()=>
+  {
+      navigate("/signup");
+  }
+
   return (
     <div className="min-h-screen flex flex-col">
       <header className="fixed top-0 left-0 right-0 z-40 bg-background/80 backdrop-blur-md border-b border-border">
@@ -32,10 +43,10 @@ export const LandingPage = ({ onLogin }: LandingPageProps) => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button variant="hero" size="lg" onClick={onLogin} className="w-full sm:w-auto">
+              <Button variant="hero" size="lg" onClick={handleLogin} className="w-full sm:w-auto">
                 Login
               </Button>
-              <Button variant="outline" size="lg" className="w-full sm:w-auto">
+              <Button variant="outline" size="lg" onClick={handlesignup}  className="w-full sm:w-auto">
                 Sign Up
               </Button>
             </div>
