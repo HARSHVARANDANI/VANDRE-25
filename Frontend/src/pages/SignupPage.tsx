@@ -38,7 +38,7 @@ export const SignupPage = () => {
         description: "Account created successfully",
       });
       
-      navigate("/app/products");
+      navigate("/login");
       } 
       catch (error) {
           toast({
