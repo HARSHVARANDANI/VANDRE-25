@@ -9,7 +9,7 @@ export const ProductCard = ({ product, onAddToBill }) => {
         <div className="space-y-4">
           <div>
             <h3 className="text-lg font-semibold group-hover:text-primary transition-smooth">
-              {product.name}
+              {product.productName}
             </h3>
             {product.category && (
               <p className="text-sm text-muted-foreground">{product.category}</p>
@@ -18,7 +18,7 @@ export const ProductCard = ({ product, onAddToBill }) => {
           
           <div className="flex items-center justify-between">
             <span className="text-2xl font-bold text-primary">
-              ₹{product.defaultPrice}
+              ₹{product.defaultValue}
             </span>
             <Button
               variant="default"

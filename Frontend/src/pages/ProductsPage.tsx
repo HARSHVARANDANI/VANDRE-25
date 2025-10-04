@@ -36,7 +36,7 @@ useEffect(() => {
     }
   }
   getAllProducts();
-}, []);
+}, [products]);
 
 
   const handleAddToBill = (product: Product) => {
@@ -59,7 +59,7 @@ useEffect(() => {
 
     const updatedProducts = [...billDraft.products, newProduct];
     const updatedFinalPrice = updatedProducts.reduce(
-      (sum, p) => sum + p.quantity * p.price,
+      (sum, p) => sum +  p.price,
       0
     );
 
@@ -108,6 +108,7 @@ useEffect(() => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {products.map((product) => (
+          
           <ProductCard
             key={product.id}
             product={product}

@@ -24,7 +24,7 @@ export const CreateBillPage = () => {
   const handleRemoveProduct = (index: number) => {
     const updatedProducts = billDraft.products.filter((_, i) => i !== index);
     const updatedFinalPrice = updatedProducts.reduce(
-      (sum, p) => sum + p.quantity * p.price,
+      (sum, p) => sum + p.price,
       0
     );
 
