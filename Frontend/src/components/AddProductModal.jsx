@@ -7,10 +7,10 @@ import { Label } from "@/components/ui/label";
 export const AddProductModal = ({ isOpen, onClose, product, onAdd }) => {
   const [quantity, setQuantity] = useState(1);
   const [price, setPrice] = useState(product?.defaultPrice || 0);
-
+  console.log(product);
   const handleAdd = () => {
     if (product && quantity > 0 && price > 0) {
-      onAdd(product.id, product.name, quantity, price);
+      onAdd(product.productId, product.productName, quantity, price);
       setQuantity(1);
       setPrice(product.defaultPrice);
       onClose();

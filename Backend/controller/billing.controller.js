@@ -18,8 +18,11 @@ export const createBill =  async (req,res)=>
 {
     
     try {
-        const {customerName,products}=req.body;
+        const {customerName,products,totalPrice}=req.body;
 
+        console.log("Customer Name:",customerName);
+        console.log("Products:",products);
+        console.log("finalPrice:",totalPrice);
         //handle these cases in frontend
         if(!products || !Array.isArray(products) || products.length === 0)
         {
@@ -29,7 +32,7 @@ export const createBill =  async (req,res)=>
         {
             return res.status(400).json({message:"Customer name is required!!"})
         }
-
+        
         const newBill = new Bill({
             customerName,products
         })

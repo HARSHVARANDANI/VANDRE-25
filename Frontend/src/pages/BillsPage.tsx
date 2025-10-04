@@ -32,8 +32,8 @@ export const BillsPage = () => {
       
       try {
         const res= await axios.get("http://localhost:3000/users/getAllBills",{withCredentials:true})
-        console.log(res);
-        setBills(res.data);
+        console.log(res.data.bills);
+        setBills(res.data.bills);
       } catch (error) {
         console.log("Cannot Fetch All Details",error);
       }

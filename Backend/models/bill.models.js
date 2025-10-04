@@ -8,7 +8,6 @@ const billSchema= new mongoose.Schema({
         type: Number,
         unique:true,
         index:true,
-        required:true,
     },
 
     customerName:{
@@ -38,7 +37,6 @@ const billSchema= new mongoose.Schema({
     ],
     totalPrice:{
         type:Number,
-        required:true,
         default:0
     }
 

@@ -58,17 +58,18 @@ export const CreateBillPage = () => {
 
   const handleConfirmBill = async () => {
     // In a real app, this would call the backend API
-    const billData = {
-      customerName,
-      products: billDraft.products,
-      finalPrice: billDraft.finalPrice,
-    };
+    console.log("productBillDraft:",billDraft.products)
+    
     //No need to send token explicitly as cookies me hai to automatically sent with request
     try {
       const billData = {
       customerName,
-      products: billDraft.products,
-      finalPrice: billDraft.finalPrice,
+      products: billDraft.products.map((p) => ({
+      productName: p.productName,
+      quantity: p.quantity,
+      finalPrice:p.price, // ensure backend gets finalPrice
+    })),
+      totalPrice: billDraft.finalPrice,
       };
       const res =  await axios.post("http://localhost:3000/users/createBill",billData,{ withCredentials: true }); //necessary if backend is on differnt origin
       
